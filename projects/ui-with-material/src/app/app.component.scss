@@ -1,4 +1,4 @@
-@import "../theme/colors-palette.scss";
+@import "../theme/sass-colors-palette.scss";
 
 
 .container {
@@ -18,11 +18,13 @@
     .first-button {
         margin-top: 20%;
         margin-left: 30%;
+        color: $contrast-500;
     }
     
     .second-button {
         margin-top: 10%;
         margin-left: 30%;
+        color: $contrast-500;
     }
 }
 
