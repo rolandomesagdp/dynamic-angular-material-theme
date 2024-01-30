@@ -30,7 +30,6 @@
               "projects/ui-with-material/src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/ui-with-material/src/styles.scss"
             ],
             "scripts": []
