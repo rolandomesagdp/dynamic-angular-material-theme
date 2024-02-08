@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class AppComponent {
   private error700: string = "#991617";
   private primary700: string = "#2290a9";
-  private currentColor: string = this.primary700;
+  private currentPrimary: string = this.primary700;
 
   title = 'ui-with-material';
 
@@ -22,13 +22,13 @@ export class AppComponent {
   }
 
   private toggleCurrentPrimaryColor(): void {
-    if(this.currentColor === this.primary700) {
-      this.currentColor = this.error700;
+    if(this.currentPrimary === this.primary700) {
+      this.currentPrimary = this.error700;
     }
-    else this.currentColor = this.primary700;
+    else this.currentPrimary = this.primary700;
   }
 
   private updateGlobalPrimaryColorVariable(): void {
-    document.documentElement.style.setProperty('--primary-700', this.currentColor);
+    document.documentElement.style.setProperty('--primary-700', this.currentPrimary);
   }
 }
