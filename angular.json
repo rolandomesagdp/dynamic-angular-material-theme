@@ -27,7 +27,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/ui-with-material/src/favicon.ico",
-              "projects/ui-with-material/src/assets"
+              "projects/ui-with-material/src/assets",
+              "projects/ui-with-material/src/web.config"
             ],
             "styles": [
               "projects/ui-with-material/src/styles.scss"
