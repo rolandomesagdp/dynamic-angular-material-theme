@@ -1,0 +1,3 @@
+@use "angular-material-css-vars" as mat-css-vars;
+
+@include mat-css-vars.init-material-css-vars();

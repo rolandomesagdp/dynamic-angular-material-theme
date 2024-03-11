@@ -15,16 +15,18 @@
     width: 200px;
     height: 200px;
 
+    .button {
+        min-width: 88px;
+    }
+
     .first-button {
         margin-top: 20%;
         margin-left: 30%;
-        color: $contrast-500;
     }
     
     .second-button {
         margin-top: 10%;
         margin-left: 30%;
-        color: $contrast-500;
     }
 }
 

@@ -1,9 +1,10 @@
 <div class="container">
     <div class="button-container">
-      <button class="first-button" mat-raised-button color="accent">Accent</button>
-    
-      <button class="second-button" mat-raised-button color="primary" (click)="changePrimaryColor()">Change</button>
-      <button class="second-button" mat-raised-button color="primary" (click)="lightenPrimaryColor()">Lighten</button>
+      <button class="button first-button" mat-raised-button color="primary" (click)="changePalette()">Change</button>
+      
+      <button class="button second-button" mat-raised-button color="accent">Accent</button>
+
+      <button class="button second-button" mat-raised-button color="warn">Warn</button>
     </div>
     <div class="colored-div"></div>
   </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import Color from 'color';
+import { MaterialPaletteGenerator } from '../../../theme-generator/material-palette-generator';
 
 @Component({
   selector: 'app-material-selector',
@@ -11,44 +12,22 @@ import Color from 'color';
   styleUrl: './material-selector.component.scss'
 })
 export class MaterialSelectorComponent {
-  private error700: string = "#991617";
-  private primary700: string = "#2290a9";
-  private currentPrimary: string = this.primary700;
+  private primary500: string = "#f7f768";
+  private accent500: string = "#68ebf7";
+  private warn500: string = "#f76868";
+  isDefaultPalette: boolean = true;
 
   title = 'ui-with-material';
 
-  changePrimaryColor(): void {
-    this.toggleCurrentPrimaryColor();
-    this.updateGlobalPrimaryColorVariable();
-  }
+  constructor(private paletteGenerator: MaterialPaletteGenerator) { }
 
-  private toggleCurrentPrimaryColor(): void {
-    if (this.currentPrimary === this.primary700) {
-      this.currentPrimary = this.error700;
+  changePalette(): void {
+    this.isDefaultPalette = !this.isDefaultPalette;
+    if(this.isDefaultPalette) {
+      this.paletteGenerator.generateDefaultPalette();
     }
-    else this.currentPrimary = this.primary700;
-  }
-
-  private updateGlobalPrimaryColorVariable(): void {
-    document.documentElement.style.setProperty('--primary-700', this.currentPrimary);
-  }
-
-  lightenPrimaryColor(): void {
-    const color: Color | null = this.buildColor(this.currentPrimary);
-    if (color) {
-      this.currentPrimary = color.lighten(0.5).hex();
-      this.updateGlobalPrimaryColorVariable();
-    }
-  }
-
-  private buildColor(color: string): Color | null {
-    try {
-      const newColor = new Color(color);
-      return newColor;
-    }
-    catch (error) {
-      console.log(`The provided color ${color} is not a valid hex color. We will use the default colors palette.`);
-      return null;
+    else {
+      this.paletteGenerator.generatePalette(this.primary500, this.accent500, this.warn500);
     }
   }
 }
